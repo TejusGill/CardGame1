@@ -18,12 +18,13 @@ public class CardTrick {
         Card[] magicHand = new Card[7];
 
         for (int i = 0; i < magicHand.length; i++) {
-            Card c = new Card();
+             Card luckyCard = new Card();
+           // Card c = new Card();
             c.setValue(random.nextInt(13) + 1);
             c.setSuit(Card.SUITS[random.nextInt(4)]);
                        
-           
-            magicHand[i] = c;
+           magicHand[i] = luckCard;
+           // magicHand[i] = c;
         }
         String format = "%d of %s \n";
         for(Card c : magicHand){
@@ -52,7 +53,12 @@ public class CardTrick {
                 break;
             }
         }
-
+        if(luckyCard){
+            System.out.println("You won");
+        }
+        else{
+            System.out.println("You lose");
+        }
         System.out.println("You got a match: " + match);
       // I edit directly on github
     }
