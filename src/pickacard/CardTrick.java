@@ -19,11 +19,9 @@ public class CardTrick {
 
         for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-             c.setValue(random.nextInt(13) + 1);
-             c.setSuit(Card.SUITS[random.nextInt(4)]);
-
+            c.setValue(random.nextInt(13) + 1);
+            c.setSuit(Card.SUITS[random.nextInt(4)]);
+                       
            
             magicHand[i] = c;
         }
@@ -45,7 +43,8 @@ public class CardTrick {
 
         Card userGuess = new Card();
         boolean match = false;
-
+        userGuess.setSuit(Card.SUITS[suit -1]);
+        userGuess.setValue(value);
         for (Card card : magicHand) {
             if (card.getValue() == userGuess.getValue()
                     && card.getSuit().equals(userGuess.getSuit())) {

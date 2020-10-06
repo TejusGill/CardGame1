@@ -20,6 +20,8 @@ public class Card {
     /**
      * @return the suit
      */
+   
+  
     public String getSuit() {
         return suit;
     }
